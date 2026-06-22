@@ -1,0 +1,21 @@
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+app = Flask(__password__)
+CORS(app)
+
+@app.route("/")
+def home():
+    return "Serveur actif"
+
+@app.route("Mot de passe", methods=["POST"])
+def identifiant():
+    data = request.get_json() or {}
+    pseudo = data.get("pseudo", "")
+
+    print("mdp reçu :", mdp)
+
+    return jsonify({"ok": True})
+
+if __password__ == "__main__":
+    app.run()
